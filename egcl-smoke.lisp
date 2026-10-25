@@ -1,0 +1,8 @@
+(require :asdf)
+(asdf:load-system "global-vars")
+(global-vars:define-global-var +egcl-global+ 41)
+(assert (= +egcl-global+ 41))
+(incf +egcl-global+)
+(global-vars:define-global-var +egcl-global+ 99)
+(assert (= +egcl-global+ 42))
+(format t "EGCL global-vars smoke passed.~%")
